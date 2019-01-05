@@ -81,14 +81,18 @@ const {showForm,status, fullView, recipes} =this.state;
 return (
 <div className="App">
 <Header onNewRecipe={() => this.setState({showForm: true})} />
-<button onClick={() => this.changeStatus(true)}><i className="fas fa-th"></i></button>
-<button onClick={() => this.changeStatus(false)}><i className="fas fa-list"></i></button>
+{/* <button onClick={() => this.changeStatus(true)}><i className="fas fa-th"></i></button> */}
+{/* <button onClick={() => this.changeStatus(false)}><i className="fas fa-list"></i></button> */}
 { showForm ? <RecipeInput onSave={this.handleSave} onClose={() => this.setState({showForm: false})} /> : null }
-{ status ? 
+{/* { status ? 
 <GridView onDelete={this.onDelete} 
 recipes={recipes} /> : 
 <ListView onDelete={this.onDelete}  
-recipes={recipes} /> }
+recipes={recipes} /> } */}
+{ status ? 
+<GridView onDelete={this.onDelete} 
+recipes={recipes} /> : 
+null } 
 {/* { fullView ? <RecipeCard 
 onSave={this.handleSave} 
 onDelete={this.onDelete} 
